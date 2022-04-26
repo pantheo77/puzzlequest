@@ -239,7 +239,7 @@
     
     <script>$(document).ready(function() {
         $('#dashboard').DataTable( {
-        "pageLength": 20,
+        "pageLength": 15,
         buttons: [{
             extend: 'csv',
             fieldSeparator: ';',

@@ -108,6 +108,7 @@
                 $run_update = mysqli_query($con,$updatesql);
                 $ratingssql = "UPDATE mpqratings SET RosterID = (SELECT roster_total.RosterID FROM roster_total WHERE roster_total.ID = mpqratings.TotalRosterID)";
                 $run_ratingssql = mysqli_query($con,$ratingssql);
+                echo '<script>window.location.replace("http://localhost/puzzlequest/heroCRUD.php");</script>';
             }
     }
     ?>
