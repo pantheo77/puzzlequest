@@ -127,6 +127,13 @@
         $run_delete = mysqli_query($con,$delete);
     
         if($run_delete){
+                
+                $update_ratings = "UPDATE mpqratings SET RosterID = null WHERE RosterID = " . $did ;
+                $run_update_ratings = mysqli_query($con,$update_ratings);
+
+                $update_TotalRoster = "UPDATE roster_total SET RosterID =  NULL WHERE RosterID = " .$did ;
+                $run_update_TotalRoster = mysqli_query($con,$update_TotalRoster);
+
                 echo "<script>window.open('heroCRUD.php','_self')</script>";
             }
     }
