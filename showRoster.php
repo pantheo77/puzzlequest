@@ -100,7 +100,7 @@
                                         scales:{
                                             yAxes:[{
                                                 ticks:{
-                                                    max: 450,
+                                                    max: 500,
                                                     min:0
                                                 }
                                             }]
