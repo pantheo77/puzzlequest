@@ -21,6 +21,9 @@
         <li class="nav-item">
             <a class="nav-link" href="insertFromTable.php">Unowned Heroes</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="logout.php">Log out</a>
+        </li>
     </ul>
 </nav>
 <div class="container" style="margin-bottom:55px"></div>
