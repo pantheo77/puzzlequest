@@ -155,8 +155,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				<i class ="text-secondary">Optimal Development: <?php echo $Development; ?></i>
 			</div>
             <div class="form-inline" style="margin-bottom:5px">
-                <label for="equippedsupport">Equipped Support:</label>
-                <select class="form-control" name="equippedsupport">
+                <label for="equippedsupport" <?php if($Character == 'Common' OR $Character == 'Uncommon'){echo 'hidden';} ?>>Equipped Support:</label>
+                <select class="form-control" name="equippedsupport" <?php if($Character == 'Common' OR $Character == 'Uncommon'){echo 'hidden';} ?>>
                     <?php 
                     $sqlsup = "SELECT id, Name FROM supports UNION ALL SELECT 0,'None Equipped';";
                     $runsup = mysqli_query($con,$sqlsup);
