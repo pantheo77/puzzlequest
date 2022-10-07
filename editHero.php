@@ -70,7 +70,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             </div>
             <div class="form-inline">
                 <label for="level">Level:</label>
-                <input type="text" class="form-control" name="level" id="level" size="1" value="<?php echo $Level; ?>">
+                <input type="number" class="form-control" name="level" id="level" size="2" value="<?php echo $Level; ?>">
             </div>
             <div class="radio">
                 <label><input type="radio" name="character" value="Common" 
@@ -82,67 +82,73 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             </div>
             <div class="form-inline">
                 <label for="health">Health:</label>
-                <input type="text" class="form-control" name="health" id="health" size="4" value="<?php echo $Health; ?>">
+                <input type="number" class="form-control" name="health" id="health" size="4" value="<?php echo $Health; ?>">
             </div>
             Damage<br>
             <div class="form-inline" style="margin-bottom:5px">
-                <label for="dYellow" class="text-warning">Yellow:</label>
-                <input type="text" class="form-control" name="dYellow" id="dYellow" size="1" value="<?php echo $dYellow; ?>">
+                <label for="dYellow" class="text-warning">Yel:</label>
+                <input type="number" class="form-control" name="dYellow" id="dYellow" size="2" value="<?php echo $dYellow; ?>">
                 <label for="dRed" class="text-danger">Red:</label>
-                <input type="text" class="form-control" name="dRed" id="dRed" size="1" value="<?php echo $dRed; ?>">
-                <label for="dBlue" class="text-primary">Blue:</label>
-                <input type="text" class="form-control" name="dBlue" id="dBlue" size="1" value="<?php echo $dBlue; ?>">
-                <label for="dBlue" style="color:rgb(238, 130, 238);">Purple:</label>
-                <input type="text" class="form-control" name="dPurple" id="dPurple" size="1" value="<?php echo $dPurple; ?>">
+                <input type="number" class="form-control" name="dRed" id="dRed" size="2" value="<?php echo $dRed; ?>">
+                <label for="dBlue" class="text-primary">Blu:</label>
+                <input type="number" class="form-control" name="dBlue" id="dBlue" size="2" value="<?php echo $dBlue; ?>">
+                <label for="dBlue" style="color:rgb(238, 130, 238);">Prp:</label>
+                <input type="number" class="form-control" name="dPurple" id="dPurple" size="2" value="<?php echo $dPurple; ?>">
             </div>
             <div class="form-inline"  style="margin-bottom:5px">
-                <label for="dBlue" class="text-success">Green:</label>
-                <input type="text" class="form-control" name="dGreen" id="dGreen" size="1" value="<?php echo $dGreen; ?>">
-                <label for="dBlack">Black:</label>
-                <input type="text" class="form-control" name="dBlack" id="dBlack" size="1" value="<?php echo $dBlack; ?>">
-                <label for="dCritical">Critical:</label>
-                <input type="text" class="form-control" name="dCritical" id="dCritical" size="1"  value="<?php echo $dCritical; ?>">
-                <label for="dBlack" class="text-light bg-dark">White:</label>
-                <input type="text" class="form-control" name="dWhite" id="dWhite" size="1"  value="<?php echo $dWhite; ?>">
+                <label for="dBlue" class="text-success">Grn:</label>
+                <input type="number" class="form-control" name="dGreen" id="dGreen" size="2" value="<?php echo $dGreen; ?>">
+                <label for="dBlack">Blk:</label>
+                <input type="number" class="form-control" name="dBlack" id="dBlack" size="2" value="<?php echo $dBlack; ?>">
+                <label for="dCritical">Crt:</label>
+                <input type="text" class="form-control" name="dCritical" id="dCritical" size="2"  value="<?php echo $dCritical; ?>">
+                <label for="dBlack" class="text-light bg-dark">Wht:</label>
+                <input type="number" class="form-control" name="dWhite" id="dWhite" size="2"  value="<?php echo $dWhite; ?>">
             </div>
             <div class="form-inline"  style="margin-bottom:5px">
                 <label for="power1">Power 1:</label>
                 <input type="text" class="form-control" name="power1" id="power1" value="<?php echo $Power1; ?>">
                 <label for="p1lvl">Level:</label>
-                <select class="form-control" name="p1lvl">
+                <!-- <select class="form-control" name="p1lvl">
                     <option value="0" <?php if($P1Lvl == '0'){ echo 'selected'; } ?>>0</option>
                     <option value="1" <?php if($P1Lvl == '1'){ echo 'selected'; } ?>>1</option>
                     <option value="2" <?php if($P1Lvl == '2'){ echo 'selected'; } ?>>2</option>
                     <option value="3" <?php if($P1Lvl == '3'){ echo 'selected'; } ?>>3</option>
                     <option value="4" <?php if($P1Lvl == '4'){ echo 'selected'; } ?>>4</option>
                     <option value="5" <?php if($P1Lvl == '5'){ echo 'selected'; } ?>>5</option>
-                </select>
+                </select> -->
+                <span>&nbsp;<span id="v_p1"></span>&nbsp;</span>
+                <input type="range" id="p1lvl" name="p1lvl" min="0" max="5" step="1" value="<?php echo $P1Lvl; ?>"> 
             </div>
             <div class="form-inline"  style="margin-bottom:5px">
                 <label for="power2">Power 2:</label>
                 <input type="text" class="form-control" name="power2" id="power2" value="<?php echo $Power2; ?>">
                 <label for="p2lvl">Level:</label>
-                <select class="form-control" name="p2lvl">
+                <!-- <select class="form-control" name="p2lvl">
                     <option value="0" <?php if($P2Lvl == '0'){ echo 'selected'; } ?>>0</option>
                     <option value="1" <?php if($P2Lvl == '1'){ echo 'selected'; } ?>>1</option>
                     <option value="2" <?php if($P2Lvl == '2'){ echo 'selected'; } ?>>2</option>
                     <option value="3" <?php if($P2Lvl == '3'){ echo 'selected'; } ?>>3</option>
                     <option value="4" <?php if($P2Lvl == '4'){ echo 'selected'; } ?>>4</option>
                     <option value="5" <?php if($P2Lvl == '5'){ echo 'selected'; } ?>>5</option>
-                </select>
+                </select> -->
+                <span>&nbsp;<span id="v_p2"></span>&nbsp;</span>
+                <input type="range" id="p2lvl" name="p2lvl" min="0" max="5" step="1" value="<?php echo $P2Lvl; ?>">               
             </div>
             <div class="form-inline" style="margin-bottom:5px">
                 <label for="power3">Power 3:</label>
                 <input type="text" class="form-control" name="power3" id="power3" value="<?php echo $Power3; ?>">
                 <label for="p3lvl">Level:</label>
-                <select class="form-control" name="p3lvl">
+                <!-- <select class="form-control" name="p3lvl">
                     <option value="0" <?php if($P3Lvl == '0'){ echo 'selected'; } ?>>0</option>
                     <option value="1" <?php if($P3Lvl == '1'){ echo 'selected'; } ?>>1</option>
                     <option value="2" <?php if($P3Lvl == '2'){ echo 'selected'; } ?>>2</option>
                     <option value="3" <?php if($P3Lvl == '3'){ echo 'selected'; } ?>>3</option>
                     <option value="4" <?php if($P3Lvl == '4'){ echo 'selected'; } ?>>4</option>
                     <option value="5" <?php if($P3Lvl == '5'){ echo 'selected'; } ?>>5</option>
-                </select>
+                </select> -->
+                <span>&nbsp;<span id="v_p3"></span>&nbsp;</span>
+                <input type="range" id="p3lvl" name="p3lvl" min="0" max="5" step="1" value="<?php echo $P3Lvl; ?>">         
             </div>
 			<div>
 				<?php 
@@ -294,5 +300,34 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        function Levelup() {
+        document.getElementById("level").stepUp();
+        }
+    </script>
+    <script>
+        var slider1 = document.getElementById("p1lvl");
+        var slider2 = document.getElementById("p2lvl");
+        var slider3 = document.getElementById("p3lvl");
+
+        var output1 = document.getElementById("v_p1");
+        var output2 = document.getElementById("v_p2");
+        var output3 = document.getElementById("v_p3");
+
+        output1.innerHTML = slider1.value;
+        output2.innerHTML = slider2.value;
+        output3.innerHTML = slider3.value;
+        
+        slider1.oninput = function(){
+            output1.innerHTML = slider1.value;
+        }
+        slider2.oninput = function(){
+            output2.innerHTML = slider2.value;
+        }
+        slider3.oninput = function(){
+            output3.innerHTML = slider3.value;
+        }
+    </script>    
 </body>
 </html>
