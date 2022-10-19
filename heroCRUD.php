@@ -256,7 +256,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     
     <script>$(document).ready(function() {
         $('#dashboard').DataTable( {
-        "pageLength": 15,
+            "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+			"pageLength": 15,
         buttons: [{
             extend: 'csv',
             fieldSeparator: ';',
