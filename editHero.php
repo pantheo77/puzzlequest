@@ -58,7 +58,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     
     <div class="container">
         <h1 class="text-center">Edit Hero</h1>
-        <form action="editHero.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
+        <form action="editHero.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data" autocomplete="off">
             <div class="form-group">
                 <input type="hidden" value="<?php echo $id; ?>" name="id" id="id">
                 <label for="name">Name:</label>

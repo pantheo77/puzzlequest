@@ -110,7 +110,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                         scales:{
                                             yAxes:[{
                                                 ticks:{
-                                                    max: 500,
+                                                    max: 800,
                                                     min:0
                                                 }
                                             }]
